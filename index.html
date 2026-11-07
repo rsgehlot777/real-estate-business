@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rakesh Properties | Buy, Sell and Rent in Meerut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700&family=Mukta:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== COLORS: change these to restyle the whole site ===== */
+:root {
+  --green: #0f3d33;      /* main dark color */
+  --brass: #b8862b;      /* button / highlight color */
+  --bg: #f5f7f6;         /* page background */
+  --text: #1c2321;       /* text color */
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: "Mukta", Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-size: 17px; }
+h1, h2, h3 { font-family: "Bitter", Georgia, serif; line-height: 1.2; }
+a { color: inherit; }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+section { padding: 56px 0; }
+h2 { font-size: 1.9rem; color: var(--green); margin-bottom: 8px; }
+.sub { color: #55605c; margin-bottom: 28px; }
+
+/* ===== TOP MENU ===== */
+header { background: var(--green); color: var(--white); position: sticky; top: 0; z-index: 10; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; max-width: 1080px; margin: 0 auto; flex-wrap: wrap; gap: 8px; }
+.logo { font-family: "Bitter", serif; font-size: 1.35rem; font-weight: 700; text-decoration: none; }
+.nav ul { list-style: none; display: flex; gap: 22px; }
+.nav ul a { text-decoration: none; font-weight: 500; }
+.nav ul a:hover { color: #e6c27a; }
+
+/* ===== BUTTONS ===== */
+.btn { display: inline-block; background: var(--brass); color: var(--white); padding: 12px 24px; border-radius: 6px; border: 0; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.btn:hover { background: #9d7022; }
+:focus-visible { outline: 3px solid #e6c27a; outline-offset: 2px; }
+
+/* ===== HERO (first big section) ===== */
+.hero { background: linear-gradient(rgba(15,61,51,.88), rgba(15,61,51,.88)), #0f3d33; color: var(--white); padding: 80px 0 64px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); max-width: 14em; margin-bottom: 14px; }
+.hero p { max-width: 32em; margin-bottom: 28px; color: #dbe6e2; }
+
+/* search box */
+.search { background: var(--white); color: var(--text); padding: 18px; border-radius: 10px; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; align-items: end; }
+.search label { display: block; font-size: .85rem; font-weight: 700; color: var(--green); margin-bottom: 4px; }
+.search select { width: 100%; padding: 10px; font: inherit; border: 1px solid #c8d1ce; border-radius: 6px; background: var(--white); }
+
+/* ===== PROPERTY CARDS ===== */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 24px; }
+.card { background: var(--white); border-radius: 10px; overflow: hidden; border: 1px solid #dde4e1; display: flex; flex-direction: column; }
+/* Photo area. To use a real photo, see the tip at the bottom of this file */
+.photo { height: 170px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+.p1 { background: #cfe3da; } .p2 { background: #e8dcc0; } .p3 { background: #d4dde8; }
+.p4 { background: #e3d0d0; } .p5 { background: #d9e6c9; } .p6 { background: #dcd3e6; }
+.info { padding: 16px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.tag { align-self: flex-start; background: var(--green); color: var(--white); font-size: .8rem; padding: 2px 10px; border-radius: 20px; }
+.price { font-family: "Bitter", serif; font-size: 1.35rem; color: var(--brass); font-weight: 700; }
+.meta { color: #55605c; font-size: .95rem; }
+.card .btn { margin-top: auto; text-align: center; padding: 9px; }
+#empty { display: none; padding: 20px; background: var(--white); border-radius: 8px; }
+
+/* ===== ABOUT ===== */
+.about { background: var(--white); }
+.stats { display: flex; gap: 40px; flex-wrap: wrap; margin-top: 22px; }
+.stats strong { display: block; font-family: "Bitter", serif; font-size: 1.8rem; color: var(--green); }
+
+/* ===== CONTACT ===== */
+.contact-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+form { display: grid; gap: 12px; }
+input, textarea { width: 100%; padding: 11px; font: inherit; border: 1px solid #c8d1ce; border-radius: 6px; }
+
+footer { background: var(--green); color: #dbe6e2; text-align: center; padding: 22px 20px; font-size: .95rem; }
+
+/* WhatsApp floating button */
+.wa { position: fixed; right: 18px; bottom: 18px; background: #25a244; color: var(--white); padding: 12px 18px; border-radius: 30px; font-weight: 700; text-decoration: none; z-index: 20; }
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .nav ul { gap: 14px; font-size: .95rem; }
+  section { padding: 40px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== 1. TOP MENU ===== -->
+<header>
+  <div class="nav">
+    <a class="logo" href="#top">Rakesh Properties</a>
+    <nav>
+      <ul>
+        <li><a href="#listings">Properties</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ===== 2. HERO + SEARCH ===== -->
+<section class="hero">
+  <div class="wrap">
+    <h1>Find a home you will be happy to come back to</h1>
+    <p>Flats, houses, plots and shops in Meerut and nearby areas. Honest prices and help with every step.</p>
+
+    <div class="search">
+      <div>
+        <label for="type">Property type</label>
+        <select id="type">
+          <option value="all">All types</option>
+          <option value="flat">Flat</option>
+          <option value="house">House</option>
+          <option value="plot">Plot</option>
+          <option value="shop">Shop</option>
+        </select>
+      </div>
+      <div>
+        <label for="budget">Maximum budget</label>
+        <select id="budget">
+          <option value="9999">Any budget</option>
+          <option value="30">Up to 30 Lakh</option>
+          <option value="50">Up to 50 Lakh</option>
+          <option value="80">Up to 80 Lakh</option>
+        </select>
+      </div>
+      <button class="btn" id="searchBtn">Search properties</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. PROPERTY LISTINGS ===== -->
+<!-- data-type = type of property, data-price = price in Lakh (used by the search) -->
+<section id="listings">
+  <div class="wrap">
+    <h2>Available properties</h2>
+    <p class="sub">All details are sample data. Replace them with your real listings.</p>
+
+    <div class="grid" id="grid">
+
+      <div class="card" data-type="flat" data-price="45">
+        <div class="photo p1">🏢</div>
+        <div class="info">
+          <span class="tag">Flat for sale</span>
+          <h3>3 BHK Flat, Shastri Nagar</h3>
+          <div class="price">₹45 Lakh</div>
+          <div class="meta">3 Bed · 2 Bath · 1450 sq ft</div>
+          <a class="btn" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="house" data-price="75">
+        <div class="photo p2">🏡</div>
+        <div class="info">
+          <span class="tag">House for sale</span>
+          <h3>4 BHK House, Garh Road</h3>
+          <div class="price">₹75 Lakh</div>
+          <div class="meta">4 Bed · 3 Bath · 2200 sq ft</div>
+          <a class="btn" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="plot" data-price="28">
+        <div class="photo p3">🌿</div>
+        <div class="info">
+          <span class="tag">Plot for sale</span>
+          <h3>Residential Plot, Mawana Road</h3>
+          <div class="price">₹28 Lakh</div>
+          <div class="meta">200 sq yd · Corner plot</div>
+          <a class="btn" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="shop" data-price="60">
+        <div class="photo p4">🏪</div>
+        <div class="info">
+          <span class="tag">Shop for sale</span>
+          <h3>Ground Floor Shop, Abu Lane</h3>
+          <div class="price">₹60 Lakh</div>
+          <div class="meta">350 sq ft · Main road facing</div>
+          <a class="btn" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="flat" data-price="28">
+        <div class="photo p5">🏠</div>
+        <div class="info">
+          <span class="tag">Flat for sale</span>
+          <h3>2 BHK Flat, Modipuram</h3>
+          <div class="price">₹28 Lakh</div>
+          <div class="meta">2 Bed · 2 Bath · 980 sq ft</div>
+          <a class="btn" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+      <div class="card" data-type="house" data-price="48">
+        <div class="photo p6">🏘️</div>
+        <div class="info">
+          <span class="tag">House for sale</span>
+          <h3>3 BHK Independent House, Defence Colony</h3>
+          <div class="price">₹48 Lakh</div>
+          <div class="meta">3 Bed · 2 Bath · 1600 sq ft</div>
+          <a class="btn" href="#contact">Ask about this</a>
+        </div>
+      </div>
+
+    </div>
+    <p id="empty">No property matches this search. Try a different type or a higher budget.</p>
+  </div>
+</section>
+
+<!-- ===== 4. ABOUT ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>About Rakesh Properties</h2>
+    <p style="max-width: 38em;">We help families and businesses in Meerut buy, sell and rent property. We check the papers, tell you the real price and stay with you until the registry is done.</p>
+    <div class="stats">
+      <div><strong>10+</strong>Years of experience</div>
+      <div><strong>500+</strong>Happy families</div>
+      <div><strong>100%</strong>Verified documents</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. CONTACT ===== -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Talk to us</h2>
+    <p class="sub">Send your details and we will message you on WhatsApp.</p>
+
+    <div class="contact-box">
+      <form id="form">
+        <input type="text" id="name" placeholder="Your name" required>
+        <input type="tel" id="phone" placeholder="Your phone number" required>
+        <textarea id="msg" rows="4" placeholder="What are you looking for?"></textarea>
+        <button class="btn" type="submit">Send on WhatsApp</button>
+      </form>
+
+      <div>
+        <h3>Office</h3>
+        <p>Rakesh Properties<br>Main Market, Meerut, Uttar Pradesh</p>
+        <h3 style="margin-top:16px;">Call</h3>
+        <p>+91 99999 99999</p>
+        <h3 style="margin-top:16px;">Email</h3>
+        <p>rakeshproperties@example.com</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 Rakesh Properties. All rights reserved.</footer>
+
+<!-- Floating WhatsApp button. Change 919999999999 to your number (91 + 10 digits) -->
+<a class="wa" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp us</a>
+
+<script>
+/* ===== YOUR WHATSAPP NUMBER: change this (91 + your 10 digit number) ===== */
+var WHATSAPP_NUMBER = "919999999999";
+
+/* ===== SEARCH: shows only the cards that match type and budget ===== */
+function filterProperties() {
+  var type = document.getElementById("type").value;
+  var maxPrice = Number(document.getElementById("budget").value);
+  var cards = document.querySelectorAll(".card");
+  var shown = 0;
+
+  cards.forEach(function (card) {
+    var okType = (type === "all") || (card.dataset.type === type);
+    var okPrice = Number(card.dataset.price) <= maxPrice;
+    if (okType && okPrice) {
+      card.style.display = "flex";
+      shown++;
+    } else {
+      card.style.display = "none";
+    }
+  });
+
+  document.getElementById("empty").style.display = shown === 0 ? "block" : "none";
+  document.getElementById("listings").scrollIntoView();
+}
+document.getElementById("searchBtn").addEventListener("click", filterProperties);
+
+/* ===== CONTACT FORM: opens WhatsApp with the message filled in ===== */
+document.getElementById("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  var text = "Hello Rakesh Properties, my name is " + document.getElementById("name").value +
+             ". My phone: " + document.getElementById("phone").value +
+             ". " + document.getElementById("msg").value;
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text), "_blank");
+});
+
+/* TIP: to use a real photo instead of the emoji, upload the image to your
+   GitHub repo (for example images/flat1.jpg) and replace
+   <div class="photo p1">🏢</div>
+   with
+   <img src="images/flat1.jpg" alt="3 BHK flat" style="width:100%;height:170px;object-fit:cover;"> */
+</script>
+</body>
+</html>
